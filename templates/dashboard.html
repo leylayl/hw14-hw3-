@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Dashboard</h1>
+        <p>Welcome back, <strong>{{ user }}</strong>!</p>
+        
+        <div style="background: #f9f4ff; padding: 10px; border-radius: 8px; border: 1px solid #d1c4e9; margin-bottom: 20px;">
+            <p style="margin: 0; font-size: 0.9em;">Favorite Style: <span style="color: #9c27b0; font-weight: bold;">{{ color }}</span></p>
+        </div>
+
+        <hr>
+
+        <h3>My Private Tasks</h3>
+        <form action="{{ url_for('add_task') }}" method="POST" style="margin-bottom: 20px;">
+            <input type="text" name="task" placeholder="What needs to be done?" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            {% for task in tasks %}
+                <li style="background: #fff; border: 1px solid #d1c4e9; padding: 10px; margin-bottom: 5px; border-radius: 4px;">
+                    {{ task }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <p><a href="{{ url_for('logout') }}" style="color: #9c27b0;">Sign Out</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Create Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Account</h1>
+        
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <p style="color: #d32f2f; font-size: 0.9em;">{{ messages[0] }}</p>
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Choose Username" required>
+            <input type="password" name="password" placeholder="Choose Password" required>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+            
+            <p style="font-size: 0.8em; color: #666; margin-bottom: 5px;">Personalize your Dashboard:</p>
+            <input type="text" name="favorite_color" placeholder="Favorite Style (e.g. Light Purple)" required>
+            
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+</body>
+</html>

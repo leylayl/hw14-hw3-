@@ -1,0 +1,16 @@
+LEARNING REFLECTION: HOMEWORK 3
+
+1. THE PROCESS
+Building this was different from Homework 2 because I had to think about "Time" as a variable. I learned how to use `time.time()` to create a timestamp and compare it to the current moment to see if a lockout period had expired.
+
+2. WHAT SURPRISED ME
+I was surprised by how much "Logic" happens before the password is even checked. In my code, the "Security Guard" checks if you are locked out FIRST. If you are, it doesn't even bother checking if your password is right or wrong. This is a very efficient way to handle security.
+
+3. WORKING WITH AI
+What the AI did that I didn't expect was suggesting the use of `users[user].get('lock_until', 0)`. I learned that using `.get()` is safer than square brackets because it prevents the app from crashing if the "lock_until" key doesn't exist yet for a new user.
+
+4. WHAT I IMPROVED
+I improved my CSS skills by creating a specific alert box for "Flash Messages." In previous assignments, my error messages were just plain text. Now, they are styled as urgent alerts, which makes the app feel much more professional and "Real-World Ready."
+
+5. HOW I FEEL
+I feel much more confident in my ability to protect a web application. I used to think security was just about passwords, but now I understand that it's also about controlling the *behavior* of the login page itself.
